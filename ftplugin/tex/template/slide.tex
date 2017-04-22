@@ -1,0 +1,197 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8
+\documentclass[xcolor=dvipsnames]{beamer}
+\usepackage{ctex}
+\usepackage{amsmath,amssymb,amsthm,listings,xcolor}
+\usepackage{graphicx,wrapfig,multirow,diagbox,caption, subcaption,verbatim}
+\usetheme{Berlin}
+%使用不同的主题，其他的有:default，柏林（Berlin），哥本哈根（Copenhagen）、博阿迪利亚（Boadilla），马德里（Madrid）、新加坡（Singapore），匹兹堡（Pittsburgh），罗切斯特（Rochester），华沙（Warsaw），马尔默（Malmoe） 
+% 设置文献引用格式
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+\setcitestyle{open={(},authoryear,close={)}}
+% 设置算法环境
+\usepackage{caption,algorithm,algpseudocode}
+\renewcommand{\algorithmicrequire}{\textbf{input}}
+\renewcommand{\algorithmicensure}{\textbf{output}}
+\floatname{algorithm}{algorithm}
+% 常用符号
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\st}{s.t.}
+\DeclareMathOperator*{\tr}{tr}
+\newcommand{\pd}{\partial}
+\newcommand{\ud}{\mathrm{d}}
+\newcommand{\mr}{\mathbb{R}}
+\newcommand{\ms}{\mathbb{S}}
+\newcommand{\mz}{\mathbb{Z}}
+\newcommand{\mn}{\mathbb{N}}
+\newcommand{\mc}{\mathbb{C}}
+\renewcommand\figurename{figure}
+\renewcommand\tablename{table}
+% 其他
+\useoutertheme{infolines}
+\setbeamertemplate{navigation symbols}{} % 取消导航条?
+\usecolortheme[named=SkyBlue]{structure} 
+\hypersetup{colorlinks=true,linkcolor=black}
+\setbeamersize{text margin left=8mm, text margin right=1cm} 
+% 每个小节前增加的内容.这里每节前加上目录,每小节前增加目录
+\AtBeginSection[]
+{
+  \begin{frame}
+    \tableofcontents[currentsection,hideallsubsections]
+  \end{frame}
+}
+\AtBeginSubsection[]
+{
+  \begin{frame}[shrink]
+    \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
+  \end{frame}
+}
+
+%
+\begin{document}
+\title[Beamer Sample]{Beamer Sample for @THEME}
+\subtitle[Beamer ver 3.06]{Based on Beamer version 3.06}
+\author{龙子超}
+\institute[PKU]{School of Mathematical Sciences \\ Peking University}
+\date{\today}
+%======封面帧
+\begin{frame}[plain] 
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \tableofcontents%[hideallsubsections]
+\end{frame}
+%======演示文稿
+\section{I love Li Ruonan}
+\subsection{北北}
+\begin{frame}{A sample slide}
+
+  A displayed formula:
+
+  \[
+    \int_{-\infty}^\infty e^{-x^2} \, dx = \sqrt{\pi}
+  \]
+
+  An itemized list:
+
+  \begin{itemize}
+    \item itemized item 1
+      \pause
+    \item itemized item 2
+      \pause
+    \item itemized item 3
+  \end{itemize}
+
+\end{frame}
+%===============
+\subsection{哥哥}
+\begin{frame}
+
+  \begin{columns}[t]
+    \begin{column}{0.4\textwidth}
+      Here is the first column. 
+      \begin{itemize}
+        \item itemized item 1
+        \item itemized item 2
+        \item itemized item 3
+      \end{itemize}
+    \end{column}
+    \pause
+    \begin{column}{0.5\textwidth}
+      I 2 Lrn.
+      \[
+        S=\frac{1}{\sqrt{2}}\left[
+          \begin{array}{cccc}
+            1&\cos\theta&\cos2\theta&\cos3\theta\\
+            0&\sin\theta&\sin2\theta&\sin3\theta
+        \end{array}\right]
+      \]
+    \end{column}
+  \end{columns}
+
+\end{frame}
+\section{moi}
+\begin{frame}[label=intro]{Introduction}
+
+  \begin{definition}
+    A triangle that has a right angle is called
+    a \emph{right triangle}.
+  \end{definition}
+
+  \pause
+
+  \begin{theorem}
+    In a right triangle, the square of hypotenuse equals
+    the sum of squares of two other sides.
+  \end{theorem}
+
+  \pause
+
+  \begin{proof}
+    We leave the proof as an exercise to our astute reader.
+    We also suggest that the reader generalize the proof to
+    non-Euclidean geometries.
+  \end{proof}
+\end{frame}
+\begin{frame}{Hello,world.}
+  \begin{corollary}
+    Hello,world.
+  \end{corollary}
+  \pause
+  \begin{example}
+    a beamer example.
+  \end{example}
+\end{frame}
+
+
+\begin{frame}{呼呼}{Some other slide}
+  \begin{block}{}
+    huhu
+  \end{block}
+  If you click \hyperlink{intro}{here}, you will jump to the slide
+  labeled ``intro''.
+  \bigskip
+  \begin{block}{haha}
+    Clicking \hyperlink{intro}{\beamerbutton{here}} will also
+    take you to the ``intro'' slide.
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{Strategies of early stopping }
+
+  \begin{algorithm}[H]
+    \caption*{re-train: Strategy 1}
+    \begin{algorithmic}
+      \Require best number of training steps $i^*$
+      \State set $\theta_0$ randomly;
+      \State train on $X^{train},Y^{train}$ for $i^*$ steps;
+    \end{algorithmic}
+  \end{algorithm}
+  \pause
+  \begin{algorithm}[H]
+    \caption*{co-train: Strategy 2}
+    \begin{algorithmic}
+      \Require $\theta=\theta^*$,$n$
+      \State set $\epsilon=J(\theta^*,X^{subtrain},Y^{subtrain})$
+      \State \textbf{while} $J(\theta,X^{validation},Y^{validation})>\epsilon$
+      \State \text{\ \ }train on $X^{train},Y^{train}$ for $n$ steps;
+      \State \textbf{end}
+    \end{algorithmic}
+  \end{algorithm}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}
+
+  \bibliography{ref}
+
+\end{frame}
+
+%====
+
+\end{document}
+

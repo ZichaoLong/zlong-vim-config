@@ -1,0 +1,72 @@
+priority -10
+
+snippet tabular "Tabular environment" b
+\begin{tabular}{${1:c}}
+  ${2}
+\end{tabular}${0}
+endsnippet
+
+snippet array "Array environment" b
+\[\begin{array}{${1:c}}
+  ${2}
+\end{array}\]${0}
+endsnippet
+
+snippet tab "Table environment" b
+\begin{table}[${1:htpb}]
+  \centering
+  \caption{${2:caption}}
+  \label{tab:${3:label}}
+  ${4:table}
+\end{table}${0}
+endsnippet
+
+snippet fig "Figure environment" b
+\begin{figure}{${1:htbp}}
+  ${4}
+  \caption{${2}}
+  \label{${3}}
+\end{figure}${0}
+endsnippet
+
+snippet subfig "Subfigure environment" b
+\begin{subfigure}{${1:0.45}\textwidth}
+  \includegraphics[width = ${2}\textwidth]{${3:figname}}
+  \caption{${4}}
+  \label{${5}}
+\end{subfigure}${0}
+endsnippet
+
+snippet frame "frame" b
+\begin{frame}{${1:title}}
+  ${0}
+\end{frame}
+endsnippet
+
+snippet graph "includegraphics" b
+\includegraphics[width = ${1}\textwidth]{${2:figname}}${0}
+endsnippet
+
+snippet eq "Equation" b
+\begin{equation}
+	${1}
+\end{equation}${0}
+endsnippet
+
+snippet eqn "Equation without number" b
+\begin{equation*}
+	${1}
+\end{equation*}${0}
+endsnippet
+
+snippet eqa "Equation array" b
+\begin{eqnarray}
+	$1 & $2 & $0
+\end{eqnarray}
+endsnippet
+
+snippet eqan "Equation array without numbers" b
+\begin{eqnarray*}
+	$1 & $2 & $0
+\end{eqnarray*}
+endsnippet
