@@ -1,11 +1,11 @@
 function! ZLONG_ReportTemplate()
-  0r ${HOME}/.vim/ftplugin/tex/template/Template.tex
+  0r ${HOME}/.vim/bundle/zlong-vim-config/ftplugin/tex/template/Template.tex
 endfunc
 function! ZLONG_InitialsetTemplate()
-  0r ${HOME}/.vim/ftplugin/tex/template/initialset.tex
+  0r ${HOME}/.vim/bundle/zlong-vim-config/ftplugin/tex/template/initialset.tex
 endfunc
 function! ZLONG_SlideTemplate()
-  0r ${HOME}/.vim/ftplugin/tex/template/slide.tex
+  0r ${HOME}/.vim/bundle/zlong-vim-config/ftplugin/tex/template/slide.tex
 endfunc
 
 command! ReportTemplate :call ZLONG_ReportTemplate()

@@ -1,19 +1,19 @@
 function! ZLONG_SetPyScript()
-  0r ${HOME}/.vim/ftplugin/python/template/pyhead
+  0r ${HOME}/.vim/bundle/zlong-vim-config/ftplugin/python/template/pyhead
   normal! G
   normal! kkk
 endfunc
 function! ZLONG_BasicLib()
-  r ${HOME}/.vim/ftplugin/python/template/basiclib
+  r ${HOME}/.vim/bundle/zlong-vim-config/ftplugin/python/template/basiclib
 endfunc
 function! ZLONG_PreprocessLib()
-  r ${HOME}/.vim/ftplugin/python/template/preprocesslib
+  r ${HOME}/.vim/bundle/zlong-vim-config/ftplugin/python/template/preprocesslib
 endfunc
 function! ZLONG_Utilies()
-  r ${HOME}/.vim/ftplugin/python/template/utilies
+  r ${HOME}/.vim/bundle/zlong-vim-config/ftplugin/python/template/utilies
 endfunc
 function! ZLONG_DebugLib()
-  r ${HOME}/.vim/ftplugin/python/template/debuglib
+  r ${HOME}/.vim/bundle/zlong-vim-config/ftplugin/python/template/debuglib
 endfunc
 
 command! Utilies :call ZLONG_Utilies()
