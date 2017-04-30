@@ -122,7 +122,7 @@ nnoremap <silent> <Leader>w :w<CR>
 autocmd BufNewFile *.cpp,*.c, exec ":call ZLONG_SetSource()" 
 autocmd BufNewFile *.h exec ":call ZLONG_SetHeadGate()"
 autocmd BufNewFile *.py exec ":call ZLONG_SetPyScript()"
-autocmd BufNewFile *.pbs 0r ~/.vim/template/pbs
+autocmd BufNewFile *.pbs 0r ~/.vim/bundle/zlong-vim-config/template/pbs
 autocmd BufNewFile *pbs set syn=sh "sh规则高亮pbs脚本
 
 
