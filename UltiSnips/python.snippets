@@ -29,7 +29,7 @@ import matplotlib.pyplot as plt
 ${0}
 endsnippet
 snippet .add_ "plot()" b
-.add_subplot(${1:111}).${2:p}${2/(p)$|(i)$|(s)$|(.*)/(?1:lot(${3}))(?2:mshow(${3:fig}, cmap='${4}'))(?3:catter(${3}, cmap='${4}'))/}(${5})[0].axes${0}
+.add_subplot(${1:111}).${2:p}${2/(p)$|(i)$|(s)$|(.*)/(?1:lot)(?2:mshow)(?3:catter)/}(${2}${2/()$|()$|()$|()/(?2:, cmap=)(?3:, cmap-)/}${3})[0].axes${0}
 endsnippet
 snippet .add "imshow()" b
 .add_subplot(${1:111}).imshow(${2}, cmap='${3}')[0].axes${0}
