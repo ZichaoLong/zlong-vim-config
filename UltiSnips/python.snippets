@@ -1,68 +1,57 @@
 priority -10
 
-snippet tf.in "InteractiveSession" b
+snippet tf.in "InteractiveSession" w
 tf.InteractiveSession()${0}
 endsnippet
-
 snippet tf.gl "global_variables_initializer" b
 tf.global_variables_initializer().run()${0}
 endsnippet
-
-snippet tf.tr "tf.train" b
+snippet tf.tr "tf.train" w
 tf.train
 endsnippet
-snippet tf.train. "AdamOptimizer()" b
-tf.train.AdamOptimizer(${1:0.1})${0}
+snippet tf.train.a "Ada... Optimizer" w
+tf.train.Ada${1:m}${1/(m)$|(g)$|(d)/(?1:)(?2:rad)(?3:elta)/}Optimizer(${2:0.1})${0}
 endsnippet
-snippet tf.train. "AdagradOptimizer()" b
-tf.train.AdagradOptimizer(${1:0.1})${0}
-endsnippet
-snippet tf.train. "GradientDescentOptimizer()" b
+snippet tf.train.g "GradientDescentOptimizer()" w
 tf.train.GradientDescentOptimizer(${1:0.1})${0}
 endsnippet
-snippet tf.train. "AdadeltaOptimizer()" b
-tf.train.AdadeltaOptimizer(${1:0.1})${0}
+snippet optimizer. "optimizer" w
+optimizer.${1:c}${1/(c)$|(a)$|(m)/(?1:ompute_gradients)(?2:pply_gradients)(?3:inimize)/}(${2:loss})${0}
 endsnippet
 
-snippet importplt "import matplotlib.pyplot as plt"
+snippet pltimp "import matplotlib.pyplot as plt" b
 import matplotlib.pyplot as plt
 ${0}
 endsnippet
-snippet .add_ "plot()" b
-.add_subplot(${1:111}).${2:p}${2/(p)$|(i)$|(s)$|(.*)/(?1:lot)(?2:mshow)(?3:catter)/}(${2}${2/()$|()$|()$|()/(?2:, cmap=)(?3:, cmap-)/}${3})[0].axes${0}
+snippet .add "add_subplot" i
+.add_subplot(${1:111}).${2:p}${2/(p)$|(i)$|(s)$|(.*)/(?1:lot)(?2:mshow)(?3:catter)/}(${3}${2/(p)$|(i)$|(s)$|(.*)/(?2:, cmap=')(?3:, cmap=')/}${4}${4/(g)$|(j)$|(.*)}/(?1:ray')(?2:et')(?3:)/})[0].axes${0}
 endsnippet
-snippet .add "imshow()" b
-.add_subplot(${1:111}).imshow(${2}, cmap='${3}')[0].axes${0}
-endsnippet
-snippet .add "scatter()" b
-.add_subplot(${1:111, projection='3d'}).scatter(${2}, cmap='${3}')[0].axes${0}
-endsnippet
-snippet .axes. "axes" b
+snippet .axes. "axes" i
 .axes.${1:s}${1/(s)$|(g)$|(.*)/(?1:et_title)(?2:et_figure)/}(${2})${0}
 endsnippet
-snippet get_figure(). "savefig()" b
+snippet get_figure(). "savefig()" i
 savefig(${1:'image name'}${2:, bbox_inches='tight'}${3:, dpi=400})
 endsnippet
-snippet plt "pltnewaxis()" b
+
+snippet plt "pltnewaxis()" w
 pltnewaxis()${0}
 endsnippet
-snippet plt3d "pltnewaxis3d()" b
+snippet plt3d "pltnewaxis3d()" w
 pltnewaxis3d()${0}
 endsnippet
-snippet pltbar "pltnewmeshbar()" b
+snippet pltbar "pltnewmeshbar()" w
 pltnewmeshbar(${1:x, y, z, N=50})${0}
 endsnippet
 snippet timeit "time it" b
-${1:import time}${2}startt = time.time()
+${1:i}${1/(i)$|(.*)/(?1:mport time)(?2:)/}${2}startt = time.time()
 ${3:code for time test}
-print('elapsed time ', time.time()-startt)
+print('elapsed time ', time.time()-${1/(i)$|(.*)/(?1:)(?2:startt)/})
 endsnippet
 
-
-snippet im "improc_tools" b
+snippet im "improc_tools" w
 improc_tools
 endsnippet
-snippet improc_tools. "improc_tools" b
+snippet improc_tools. "improc_tools" i
 improc_tools.${1:k}${1/(k)$|(b)$|(i)$|(.*)/(?1:ernel_basis_filter)(?2:ox_filter)(?3:mguidedfilter)/} ${0}
 endsnippet
 
