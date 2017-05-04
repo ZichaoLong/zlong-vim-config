@@ -1,13 +1,38 @@
 priority -10
 
-snippet tf.In "tf.InteractiveSession" b
+snippet tf.in "InteractiveSession" b
 tf.InteractiveSession()${0}
-\begin{tabular}{${1:c}}
-  ${2}
-\end{tabular}${0}
 endsnippet
 
-snippet tf.gl "tf.global_variables_initializer" b
+snippet tf.gl "global_variables_initializer" b
 tf.global_variables_initializer().run()${0}
 endsnippet
+
+snippet tfadam "AdamOptimizer" b
+tf.train.AdamOptimizer(${1})${0}
+endsnippet
+snippet tfadag "AdagradOptimizer" b
+tf.train.AdagradOptimizer(${1})${0}
+endsnippet
+snippet tfgrad "GradientDescentOptimizer" b
+tf.train.GradientDescentOptimizer(${1})${0}
+endsnippet
+
+snippet .add ".add_subplot()" b
+.add_subplot(${1})${0}
+endsnippet
+
+snippet im "improc_tools" b
+improc_tools
+endsnippet
+snippet improc_tools. "improc_tools.kernel_basis_filter" b
+improc_tools.kernel_basis_filter${0}
+endsnippet
+snippet improc_tools. "improc_tools.box_filter" b
+improc_tools.box_filter${0}
+endsnippet
+snippet improc_tools. "improc_tools.imguidedfilter" b
+improc_tools.imguidedfilter${0}
+endsnippet
+
 
