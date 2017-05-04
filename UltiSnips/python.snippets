@@ -1,0 +1,13 @@
+priority -10
+
+snippet tf.In "tf.InteractiveSession" b
+tf.InteractiveSession()${0}
+\begin{tabular}{${1:c}}
+  ${2}
+\end{tabular}${0}
+endsnippet
+
+snippet tf.gl "tf.global_variables_initializer" b
+tf.global_variables_initializer().run()${0}
+endsnippet
+
