@@ -192,10 +192,7 @@ nmap <C-F>f <Plug>CtrlSFPrompt
 "search current visual selection text
 vmap <C-F>n <Plug>CtrlSFVwordExec
 
-"let g:cellmode_default_mappings='0'
-"let g:cellmode_tmux_sessionname='IPython'
-"let g:cellmode_tmux_windowname='IPython'
-"let g:cellmode_tmux_panenumber='0'
+let g:cellmode_default_mappings = 1
 
 let g:tex_flavor = 'tex'
 
