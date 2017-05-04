@@ -184,6 +184,7 @@ let g:session_autosave = 0
 
 
 let g:ctrlsf_confirm_save = 0
+let g:ctrlsf_ackprg = '~/.vim/bundle/zlong-vim-config/dependence/ack'
 "search the word under the cursor
 nmap <C-F>n <Plug>CtrlSFCwordPath<CR>
 "input :CtrlSF in command line
