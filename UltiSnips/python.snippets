@@ -29,8 +29,8 @@ endsnippet
 snippet .axes. "axes" i
 .axes.${1:s}${1/(s)$|(g)$|(.*)/(?1:et_title)(?2:et_figure)/}(${2})${0}
 endsnippet
-snippet get_figure(). "savefig()" i
-savefig(${1:'image name'}${2:, bbox_inches='tight'}${3:, dpi=400})
+snippet .get_figure(). "savefig()" i
+.get_figure().savefig(${1:'image name'}${2:, bbox_inches='tight'}${3:, dpi=400})
 endsnippet
 
 snippet plt "pltnewaxis()" w
@@ -51,7 +51,7 @@ endsnippet
 snippet im "improc_tools" w
 improc_tools
 endsnippet
-snippet improc_tools. "improc_tools" i
+snippet improc_tools. "improc_tools module" i
 improc_tools.${1:k}${1/(k)$|(b)$|(i)$|(.*)/(?1:ernel_basis_filter)(?2:ox_filter)(?3:mguidedfilter)/} ${0}
 endsnippet
 
