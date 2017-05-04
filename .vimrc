@@ -126,7 +126,7 @@ autocmd BufNewFile *.pbs 0r ~/.vim/bundle/zlong-vim-config/template/pbs
 autocmd BufNewFile *pbs set syn=sh "sh规则高亮pbs脚本
 
 
-let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsExpandTrigger="<tab>"
 ""不使用<Tab>(pydiction的补全提示)
 "let g:UltiSnipsJumpForwardTrigger="<c-n>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-p>"

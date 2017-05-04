@@ -11,16 +11,16 @@ endsnippet
 snippet tf.tr "tf.train" b
 tf.train
 endsnippet
-snippet tf.train. "AdamOptimizer" b
+snippet tf.train. "AdamOptimizer()" b
 tf.train.AdamOptimizer(${1:0.1})${0}
 endsnippet
-snippet tf.train. "AdagradOptimizer" b
+snippet tf.train. "AdagradOptimizer()" b
 tf.train.AdagradOptimizer(${1:0.1})${0}
 endsnippet
-snippet tf.train. "GradientDescentOptimizer" b
+snippet tf.train. "GradientDescentOptimizer()" b
 tf.train.GradientDescentOptimizer(${1:0.1})${0}
 endsnippet
-snippet tf.train. "AdadeltaOptimizer" b
+snippet tf.train. "AdadeltaOptimizer()" b
 tf.train.AdadeltaOptimizer(${1:0.1})${0}
 endsnippet
 
@@ -28,13 +28,13 @@ snippet importplt "import matplotlib.pyplot as plt"
 import matplotlib.pyplot as plt
 ${0}
 endsnippet
-snippet .add "subplot plot()" b
+snippet .add "plot()" b
 .add_subplot(${1:111}).plot(${2})[0].axes${0}
 endsnippet
-snippet .add "subplot imshow()" b
+snippet .add "imshow()" b
 .add_subplot(${1:111}).imshow(${2}, cmap='${3}')[0].axes${0}
 endsnippet
-snippet .add "subplot scatter()" b
+snippet .add "scatter()" b
 .add_subplot(${1:111, projection='3d'}).scatter(${2}, cmap='${3}')[0].axes${0}
 endsnippet
 snippet .axes. "set_title()" b
@@ -65,7 +65,7 @@ print('elapsed time ', time.time()-startt)
 endsnippet
 
 
-snippet im "improc_tools" b
+snippet improc "improc_tools" b
 improc_tools
 endsnippet
 snippet improc_tools. "kernel_basis_filter" b
@@ -76,6 +76,9 @@ improc_tools.box_filter${0}
 endsnippet
 snippet improc_tools. "imguidedfilter" b
 improc_tools.imguidedfilter${0}
+endsnippet
+snippet improc_tools "improc_tools" b
+improc_tools.${1:k}${1/(k)$(b)$(i)/(?1:ernel_basis_filter)(?2:ox_filter)(?3:mguidedfilter)/}${0}
 endsnippet
 
 
