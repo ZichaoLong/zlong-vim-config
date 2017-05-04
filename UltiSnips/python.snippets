@@ -28,8 +28,8 @@ snippet importplt "import matplotlib.pyplot as plt"
 import matplotlib.pyplot as plt
 ${0}
 endsnippet
-snippet .add "plot()" b
-.add_subplot(${1:111}).plot(${2})[0].axes${0}
+snippet .add_ "plot()" b
+.add_subplot(${1:111}).${2:p}${2/(p)$|(i)$|(s)$|(.*)/(?1:lot)(?2:mshow)(?3:catter)/}[0].axes${0}
 endsnippet
 snippet .add "imshow()" b
 .add_subplot(${1:111}).imshow(${2}, cmap='${3}')[0].axes${0}
@@ -37,14 +37,8 @@ endsnippet
 snippet .add "scatter()" b
 .add_subplot(${1:111, projection='3d'}).scatter(${2}, cmap='${3}')[0].axes${0}
 endsnippet
-snippet .axes. "set_title()" b
-.axes.set_title(${1})${0}
-endsnippet
-snippet .axes. "get_figure()" b
-.axes.get_figure(${1})${0}
-endsnippet
-snippet .axes. "semilogy()" b
-.axes.semilogy()${0}
+snippet .axes. "axes" b
+.axes.${1:s}${1/(s)$|(g)$|(.*)/(?1:et_title)(?2:et_figure)/}(${2})${0}
 endsnippet
 snippet get_figure(). "savefig()" b
 savefig(${1:'image name'}${2:, bbox_inches='tight'}${3:, dpi=400})
@@ -65,20 +59,11 @@ print('elapsed time ', time.time()-startt)
 endsnippet
 
 
-snippet improc "improc_tools" b
+snippet im "improc_tools" b
 improc_tools
 endsnippet
-snippet improc_tools. "kernel_basis_filter" b
-improc_tools.kernel_basis_filter${0}
-endsnippet
-snippet improc_tools. "box_filter" b
-improc_tools.box_filter${0}
-endsnippet
-snippet improc_tools. "imguidedfilter" b
-improc_tools.imguidedfilter${0}
-endsnippet
-snippet improc_tools "improc_tools" b
-improc_tools.${1:k}${1/(k)$|(b)$|(i)$|(.*)/(?1:ernel_basis_filter)(?2:ox_filter)(?3:mguidedfilter)/}${0}
+snippet improc_tools. "improc_tools" b
+improc_tools.${1:k}${1/(k)$|(b)$|(i)$|(.*)/(?1:ernel_basis_filter)(?2:ox_filter)(?3:mguidedfilter)/} ${0}
 endsnippet
 
 
