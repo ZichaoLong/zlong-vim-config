@@ -8,19 +8,62 @@ snippet tf.gl "global_variables_initializer" b
 tf.global_variables_initializer().run()${0}
 endsnippet
 
-snippet tfadam "AdamOptimizer" b
-tf.train.AdamOptimizer(${1})${0}
+snippet tf.tr "tf.train" b
+tf.train
 endsnippet
-snippet tfadag "AdagradOptimizer" b
-tf.train.AdagradOptimizer(${1})${0}
+snippet tf.train "AdamOptimizer" b
+tf.train.AdamOptimizer(${1:0.1})${0}
 endsnippet
-snippet tfgrad "GradientDescentOptimizer" b
-tf.train.GradientDescentOptimizer(${1})${0}
+snippet tf.train "AdagradOptimizer" b
+tf.train.AdagradOptimizer(${1:0.1})${0}
+endsnippet
+snippet tf.train "GradientDescentOptimizer" b
+tf.train.GradientDescentOptimizer(${1:0.1})${0}
+endsnippet
+snippet tf.train "AdadeltaOptimizer" b
+tf.train.AdadeltaOptimizer(${1:0.1})${0}
 endsnippet
 
-snippet .add ".add_subplot()" b
-.add_subplot(${1})${0}
+snippet importplt "import matplotlib.pyplot as plt"
+import matplotlib.pyplot as plt
+${0}
 endsnippet
+snippet .add ".add_subplot()" b
+.add_subplot(${1:111}).plot(${2})[0].axes${0}
+endsnippet
+snippet .add ".add_subplot()" b
+.add_subplot(${1:111}).imshow(${2}, cmap='${3}')[0].axes${0}
+endsnippet
+snippet .add ".add_subplot()" b
+.add_subplot(${1:111, projection='3d'}).scatter(${2}, cmap='${3}')[0].axes${0}
+endsnippet
+snippet .axes. ".axes.set_title()" b
+.axes.set_title(${1})${0}
+endsnippet
+snippet .axes. ".axes.get_figure()" b
+.axes.get_figure(${1})${0}
+endsnippet
+snippet .axes. ".axes.semilogy()" b
+.axes.semilogy()${0}
+endsnippet
+snippet get_figure(). "savefig()" b
+savefig(${1:'image name'}${2:, bbox_inches='tight'}${3:, dpi=400})
+endsnippet
+snippet plt "pltnewaxis()" b
+pltnewaxis()${0}
+endsnippet
+snippet plt3d "pltnewaxis3d()" b
+pltnewaxis3d()${0}
+endsnippet
+snippet pltbar "pltnewmeshbar()" b
+pltnewmeshbar(${1:x, y, z, N=50})${0}
+endsnippet
+snippet timeit "time it" b
+${1:import time}${2}startt = time.time()
+${3:code for time test}
+print('elapsed time ', time.time()-startt)
+endsnippet
+
 
 snippet im "improc_tools" b
 improc_tools
