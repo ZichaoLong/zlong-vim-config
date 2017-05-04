@@ -178,9 +178,9 @@ let g:session_autosave = 0
 
 "let g:pydiction_location = '~/.vim/complete-dict/complete-dict'
 
-let g:ycm_python_binary_path = 'python'
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-let g:ycm_key_invoke_completion = '<C-i>'
+"let g:ycm_python_binary_path = 'python'
+"let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+"let g:ycm_key_invoke_completion = '<C-i>'
 
 
 let g:ctrlsf_confirm_save = 0
