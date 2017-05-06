@@ -33,8 +33,8 @@ Plugin 'vimcn/vimcdoc'
 "Plugin 'ervandew/supertab'
 "Plugin 'vim-scripts/Conque-Shell'
 "Plugin 'ivanov/vim-ipython'
-Plugin 'longzichao/zlong-vim-config'
-Plugin 'longzichao/vim-cellmode'
+Plugin 'ZichaoLong/zlong-vim-config'
+Plugin 'ZichaoLong/vim-cellmode'
 call vundle#end()            " required
 filetype plugin indent on    " required
 filetype plugin on
