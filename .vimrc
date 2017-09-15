@@ -59,7 +59,8 @@ set smartindent "智能缩进
 "set fo+=m "自动换行的汉字支持
 set cc=80 "让第80列高亮
 set cindent
-set cinoptions=g2
+"set cinoptions=g2
+autocmd BufReadPost *.tex,*.cc,*.cpp,*.c,*.h setlocal shiftwidth=2
 set expandtab "制表符展开成空格。输入制表符需ctrl-V+tab
 set tabstop=4 "设置制表符tab等同的空格长度
 set softtabstop=4 "按tab键产生的空白宽度,当空白达到tabstop宽度,且未设置expandtab时成为真正的制表符,否则是一些空格的组合.若设置了expandtab则是空格
@@ -77,8 +78,9 @@ set backspace=indent,eol,start
 set fileencodings=ucs-bom,utf-8,chinese,cp936,gb18030,big5,euc-jp,euc-kr,latin1 "打开文件时用这些编码识别
 set fileencoding=utf-8 "默认编码
 au BufWritePre * if !&bin && &fenc != 'utf-8' | set fenc=utf-8 | endif "不管打开什么编码的文件，保存时都用utf-8
-autocmd BufWritePre *.cc *.cpp,*.c,*.h,*.m,*.txt setlocal ff=dos
-autocmd BufWritePre *.py setlocal ff=unix
+autocmd BufWritePre * setlocal ff=unix
+autocmd BufWritePre *.txt,*.md setlocal ff=dos
+"autocmd BufWritePre *.tex,*.cc,*.cpp,*.c,*.h,*.m,*.py setlocal ff=unix
 
 runtime macros/matchit.vim"支持匹配关键字跳转
 "Jump to the last position when reopening a file
@@ -92,14 +94,14 @@ highlight Folded ctermfg=3 ctermbg=NONE"设置折叠颜色
 set gcr=a:block-blinkon0
 "设置gvim下的配色方案及字体
 if has("gui_running")
-  color molokai
-  set guifont=Ubuntu\ Mono\ 12
-  set cc=""
+    color molokai
+    set guifont=Ubuntu\ Mono\ 12
+    set cc=""
 else
-  "let g:molokai_original=1
-  "let g:rehash256=1
-  "color molokai
-  "set guifont=Ubuntu\ Mono\ 12
+    "let g:molokai_original=1
+    "let g:rehash256=1
+    "color molokai
+    "set guifont=Ubuntu\ Mono\ 12
 endif
 
 "窗口操作
@@ -185,6 +187,7 @@ let g:session_autosave = 0
 
 let g:ctrlsf_confirm_save = 0
 let g:ctrlsf_ackprg = $HOME.'/.vim/bundle/zlong-vim-config/dependence/ack'
+let g:ctrlsf_position = 'left'
 "search the word under the cursor
 nmap <C-F>n <Plug>CtrlSFCwordPath<CR>
 "input :CtrlSF in command line
