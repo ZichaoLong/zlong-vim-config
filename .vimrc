@@ -33,6 +33,8 @@ Plugin 'vimcn/vimcdoc'
 "Plugin 'ervandew/supertab'
 "Plugin 'vim-scripts/Conque-Shell'
 "Plugin 'ivanov/vim-ipython'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'ZichaoLong/zlong-vim-config'
 Plugin 'ZichaoLong/vim-cellmode'
 call vundle#end()            " required
@@ -198,4 +200,6 @@ vmap <C-F>n <Plug>CtrlSFVwordExec
 let g:cellmode_default_mappings = 1
 
 let g:tex_flavor = 'tex'
+
+let g:vim_markdown_folding_disabled = 1
 
