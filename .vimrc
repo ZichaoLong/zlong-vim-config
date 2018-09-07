@@ -81,7 +81,7 @@ set fileencodings=ucs-bom,utf-8,chinese,cp936,gb18030,big5,euc-jp,euc-kr,latin1 
 set fileencoding=utf-8 "默认编码
 au BufWritePre * if !&bin && &fenc != 'utf-8' | set fenc=utf-8 | endif "不管打开什么编码的文件，保存时都用utf-8
 autocmd BufWritePre * setlocal ff=unix
-autocmd BufWritePre *.tex,*.txt,*.md,*.m setlocal ff=dos
+autocmd BufWritePre *.bib,*.tex,*.txt,*.m setlocal ff=dos
 "autocmd BufWritePre *.tex,*.cc,*.cpp,*.c,*.h,*.m,*.py setlocal ff=unix
 
 runtime macros/matchit.vim"支持匹配关键字跳转
@@ -190,6 +190,7 @@ let g:session_autosave = 0
 let g:ctrlsf_confirm_save = 0
 let g:ctrlsf_ackprg = $HOME.'/.vim/bundle/zlong-vim-config/dependence/ack'
 let g:ctrlsf_position = 'left'
+let g:ctrlsf_ignore_dir = [""]
 "search the word under the cursor
 nmap <C-F>n <Plug>CtrlSFCwordPath<CR>
 "input :CtrlSF in command line
