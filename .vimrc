@@ -62,7 +62,8 @@ set smartindent "智能缩进
 set cc=80 "让第80列高亮
 set cindent
 "set cinoptions=g2
-autocmd BufReadPost *.tex,*.cc,*.cpp,*.c,*.h setlocal shiftwidth=2
+autocmd BufReadPost *.tex setlocal shiftwidth=2
+autocmd BufReadPost *.cc,*.cpp,*.c,*.h setlocal shiftwidth=4
 set expandtab "制表符展开成空格。输入制表符需ctrl-V+tab
 set tabstop=4 "设置制表符tab等同的空格长度
 set softtabstop=4 "按tab键产生的空白宽度,当空白达到tabstop宽度,且未设置expandtab时成为真正的制表符,否则是一些空格的组合.若设置了expandtab则是空格
@@ -81,8 +82,9 @@ set fileencodings=ucs-bom,utf-8,chinese,cp936,gb18030,big5,euc-jp,euc-kr,latin1 
 set fileencoding=utf-8 "默认编码
 au BufWritePre * if !&bin && &fenc != 'utf-8' | set fenc=utf-8 | endif "不管打开什么编码的文件，保存时都用utf-8
 autocmd BufWritePre * setlocal ff=unix
-autocmd BufWritePre *.bib,*.tex,*.txt,*.m setlocal ff=dos
+"autocmd BufWritePre *.tex setlocal ff=dos
 "autocmd BufWritePre *.tex,*.cc,*.cpp,*.c,*.h,*.m,*.py setlocal ff=unix
+autocmd BufReadPre *.geo set filetype=c
 
 runtime macros/matchit.vim"支持匹配关键字跳转
 "Jump to the last position when reopening a file
@@ -116,7 +118,7 @@ nnoremap <silent> <C-w>H :vertical resize -3<CR>
 
 "<F4>生成当前目录及子目录的tags文件。
 nnoremap <F4> :!ctags -R<CR> 
-nmap <Leader>t <C-t> "C-t可用于tags跳转
+"nmap <Leader>t <C-t> "C-t可用于tags跳转
 "粘贴后光标跳至粘贴文本最后
 nnoremap <silent> p p`] 
 nnoremap <silent> <Leader>w :w<CR>

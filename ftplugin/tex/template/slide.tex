@@ -3,18 +3,15 @@
 \documentclass[xcolor=dvipsnames]{beamer}
 \usepackage{ctex}
 \usepackage{amsmath,amssymb,amsthm,listings,xcolor}
-\usepackage{graphicx,wrapfig,multirow,diagbox,caption, subcaption,verbatim}
+\usepackage{graphicx,wrapfig,multirow,diagbox,caption,bm,subcaption,verbatim}
 \usetheme{Berlin}
 %使用不同的主题，其他的有:default，柏林（Berlin），哥本哈根（Copenhagen）、博阿迪利亚（Boadilla），马德里（Madrid）、新加坡（Singapore），匹兹堡（Pittsburgh），罗切斯特（Rochester），华沙（Warsaw），马尔默（Malmoe） 
 % 设置文献引用格式
 \usepackage{natbib}
 \bibliographystyle{abbrvnat}
 \setcitestyle{open={(},authoryear,close={)}}
-% 设置算法环境
-\usepackage{caption,algorithm,algpseudocode}
-\renewcommand{\algorithmicrequire}{\textbf{input}}
-\renewcommand{\algorithmicensure}{\textbf{output}}
-\floatname{algorithm}{algorithm}
+\usepackage{caption,algpseudocode}
+\usepackage[boxruled]{algorithm2e}
 % 常用符号
 \DeclareMathOperator*{\argmax}{argmax}
 \DeclareMathOperator*{\argmin}{argmin}
@@ -31,10 +28,11 @@
 \renewcommand\tablename{table}
 % 其他
 \useoutertheme{infolines}
-\setbeamertemplate{navigation symbols}{} % 取消导航条?
 \usecolortheme[named=SkyBlue]{structure} 
 \hypersetup{colorlinks=true,linkcolor=black}
 \setbeamersize{text margin left=8mm, text margin right=1cm} 
+% \setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{footline}[split,frame number]{}
 % 每个小节前增加的内容.这里每节前加上目录,每小节前增加目录
 \AtBeginSection[]
 {
@@ -164,27 +162,19 @@
 \begin{frame}{Strategies of early stopping }
 
   \begin{algorithm}[H]
-    \caption*{re-train: Strategy 1}
-    \begin{algorithmic}
-      \Require best number of training steps $i^*$
-      \State set $\theta_0$ randomly;
-      \State train on $X^{train},Y^{train}$ for $i^*$ steps;
-    \end{algorithmic}
-  \end{algorithm}
-  \pause
-  \begin{algorithm}[H]
-    \caption*{co-train: Strategy 2}
-    \begin{algorithmic}
-      \Require $\theta=\theta^*$,$n$
-      \State set $\epsilon=J(\theta^*,X^{subtrain},Y^{subtrain})$
-      \State \textbf{while} $J(\theta,X^{validation},Y^{validation})>\epsilon$
-      \State \text{\ \ }train on $X^{train},Y^{train}$ for $n$ steps;
-      \State \textbf{end}
-    \end{algorithmic}
+    \TitleOfAlgo*{co-train: Strategy 2}
+    % \caption*{co-train: Strategy 2}
+    \SetAlgoLined
+      initialize $\theta,\delta$\;
+      \While{Not Converge}{
+      $(x,y)=$loaddata()\;
+      $\theta\gets\theta-\delta \nabla_\theta K(Net^\theta{x},y)$\;
+      }
   \end{algorithm}
 
 \end{frame}
 
+\section*{References}
 \begin{frame}[allowframebreaks]{References}
 
   \bibliography{ref}

@@ -6,19 +6,16 @@
 \usepackage{ctex}
 \usepackage{geometry,anysize,changepage,calc,hyperref,cite,fancyhdr,setspace}
 \usepackage{amsmath,amssymb,amsthm,listings,xcolor}
-\usepackage{graphicx,wrapfig,multirow,diagbox,caption, subcaption,verbatim}
-\usepackage{caption,algorithm,algpseudocode}
-\usepackage{url,natbib}
-\usepackage{bm}
+\usepackage{graphicx,wrapfig,multirow,diagbox,caption,subcaption}
+\usepackage{verbatim,algpseudocode}
+\usepackage[boxruled]{algorithm2e}
+\usepackage{url,natbib,bm}
 \bibliographystyle{abbrvnat}
 \setcitestyle{open={(},authoryear,close={)}}
-\renewcommand{\algorithmicrequire}{\textbf{输入}}
-\renewcommand{\algorithmicensure}{\textbf{输出}}
-\floatname{algorithm}{子程序}
 \listfiles
 \input{initialset.tex}
 \linespread{1.5}
-\author{1501110029\ 龙子超}
+\author{龙子超}
 \title{{\heiti {\zihao{3} }}}
 \date{}
 \begin{document}
@@ -42,21 +39,15 @@
 
 
 
-
-%\begin{algorithm}
-%  \caption*{ADMM求解$\min_{X\succeq0}|X|_1,\st |SX-I|\leq\sigma$}
-%  %  \caption{ADMM求解$\min_{X\succeq0}|X|_1,\st |SX-I|\leq\sigma$}\label{alg:ADMM}
-%  \begin{algorithmic}
-%    \Require $S,\sigma,\rho$
-%    \Ensure $X,|X|_1$
-%    \State \textbf{Repeat while not convergence}
-%    \begin{enumerate}
-%      \item  根据式(\ref{eq:updateW3_2}
-%      $\sim$\ref{eq:updateZ3_2}),依次求$W^+,X^+,Y^+,Z^+$;
-%      \item  根据式(\ref{eq:updateU3_2}),依次求${U^1}^+,{U^2}^+,{U^3}^+$;
-%    \end{enumerate}
-%    \Return $X,|X|_1$
-%  \end{algorithmic}
+%\begin{algorithm}[H]
+%  \TitleOfAlgo*{co-train: Strategy 2}
+%  % \caption*{co-train: Strategy 2}
+%  \SetAlgoLined
+%    initialize $\theta,\delta$\;
+%    \While{Not Converge}{
+%    $(x,y)=$loaddata()\;
+%    $\theta\gets\theta-\delta \nabla_\theta K(Net^\theta{x},y)$\;
+%    }
 %\end{algorithm}
 
 %\begin{lstlisting}[language=Matlab,keywordstyle=\color{blue},commentstyle=\color{red!80!green!80!blue!80}, rulesepcolor=\color{red!50!green!50!blue!50},tabsize=4]
