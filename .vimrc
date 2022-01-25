@@ -62,6 +62,7 @@ set smartindent "智能缩进
 set cc=80 "让第80列高亮
 set cindent
 "set cinoptions=g2
+autocmd BufReadPost *.json setlocal foldmethod=indent
 autocmd BufReadPost *.tex setlocal shiftwidth=2
 autocmd BufReadPost *.cc,*.cpp,*.c,*.h setlocal shiftwidth=4
 set expandtab "制表符展开成空格。输入制表符需ctrl-V+tab
