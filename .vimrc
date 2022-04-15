@@ -208,3 +208,5 @@ let g:tex_flavor = 'tex'
 
 let g:vim_markdown_folding_disabled = 1
 
+let g:julia_indent_align_brackets = 0
+let g:julia_indent_align_funcargs = 0
