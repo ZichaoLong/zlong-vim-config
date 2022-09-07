@@ -36,6 +36,7 @@ Plugin 'vimcn/vimcdoc'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'JuliaEditorSupport/julia-vim'
+Plugin 'rhysd/vim-llvm'
 Plugin 'ZichaoLong/zlong-vim-config'
 Plugin 'ZichaoLong/vim-cellmode'
 call vundle#end()            " required
